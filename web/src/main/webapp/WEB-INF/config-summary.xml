@@ -45,11 +45,8 @@
           determine facet values for the indexing field.
           The bean must implement the org.fao.kernel.search.classifier.Classifier interface
           Defaults to a classifier which uses the value of the field to be indexed
-      * localized: (optional, default FALSE) indicates if the field can contain multilingual values.
-          SHOULD NOT be applied to "code" values, like topic categories/codelist/etc, for
-          these fields should be defined a translator in the summary section for the field.
 
-      When a facet definition is modified or added, the index MUST be rebuilt.
+      When a facet definitionis modified or added, the index MUST be rebuilt.
 
       How facet summaries should be built and formatted for each summary type is defined
       in the summaryTypes element. The summaryTypes element contains a number of summary type elements each
@@ -84,8 +81,8 @@
 
   <facets>
     <facet name="keyword" indexKey="keyword" label="keywords" localized="true"/>
-    <facet name="topicCat" indexKey="topicCat" label="topicCats" />
-    <facet name="category" indexKey="_cat" label="categories" />
+    <facet name="topicCat" indexKey="topicCat" label="topicCats" localized="true"/>
+    <facet name="category" indexKey="_cat" label="categories" localized="true"/>
     <facet name="inspireTheme" indexKey="inspiretheme" label="inspireThemes"/>
     <facet name="inspireThemeWithAc" indexKey="inspirethemewithac" label="inspireThemesWithAc"/>
     <facet name="inspireThemeURI" indexKey="inspirethemeuri" label="inspireThemesURI"/>
@@ -137,8 +134,13 @@
 
   <summaryTypes>
     <summaryType name="details" format="DIMENSION">
-      <item facet="type" translator="codelist:gmd:MD_ScopeCode"/>
+      <!-- <item facet="type" translator="codelist:gmd:MD_ScopeCode"/> -->
+      <item facet="serviceType"/>
       <item facet="mdActions"/>
+      <item facet="category" max="99" sortBy="value"
+        translator="db:org.fao.geonet.repository.MetadataCategoryRepository:findOneByName"/>
+      <item facet="groupOwner" max="199" sortBy="value"
+            translator="db:org.fao.geonet.repository.GroupRepository:findOne:int"/>
       <item facet="topicCat" translator="codelist:gmd:MD_TopicCategoryCode" max="20"/>
       <item facet="inspireThemeURI" sortBy="value" sortOrder="asc" max="35"
             translator="term:http://inspire.ec.europa.eu/theme"/>
