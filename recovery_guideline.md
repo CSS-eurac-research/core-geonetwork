@@ -48,7 +48,7 @@ Run Geonetwork in Tomcat
 Once the .war file is available, before deploying it, it is necessary to stop
 the Tomcat service:
 
->   [root\@CSScat01 web]\# service tomcat stop
+[root\@CSScat01 web]\# service tomcat stop
 
 Then move to the web app folder of Geonetwork
 
@@ -93,12 +93,9 @@ or, better,
 
 To enable symbolic link, it is necessary to create the following .xml file
 /mnt/CEPHFS_CSS_EDP_RW/geonetwork/META-INF/context.xml
-
->   \<?xml version="1.0" encoding="UTF-8"?\>
-
->   \<Context path="/mnt/CEPHFS_CSS_EDP_RW/geonetwork" allowLinking="true"\>
-
->   \</Context\>
+    <?xml version="1.0" encoding="UTF-8"?\>
+    <Context path="/mnt/CEPHFS_CSS_EDP_RW/geonetwork" allowLinking="true"\>
+    </Context\>
 
 Source: <https://isocra.com/2008/01/following-symbolic-links-in-tomcat/>
 
@@ -120,20 +117,16 @@ is necessary to edit the following file:
 
 and insert the following lines (in italic):
 
-\<summaryType name="details" format="DIMENSION"\>
-
-\<item facet="type" translator="codelist:gmd:MD_ScopeCode"/\>
-
-\<item facet="mdActions"/\>
-
-*\<item facet="category" max="99" sortBy="value"*
-
-*translator="db:org.fao.geonet.repository.MetadataCategoryRepository:findOneByName"/\>*
+    <summaryType name="details" format="DIMENSION"\>
+    <item facet="type" translator="codelist:gmd:MD_ScopeCode"/\>
+    <item facet="mdActions"/\>
+    <item facet="category" max="99" sortBy="value"
+    translator="db:org.fao.geonet.repository.MetadataCategoryRepository:findOneByName"/\>
 
 For a better collection of information, it is necessary to comment the following
 line:
 
-\<item facet="type" translator="codelist:gmd:MD_ScopeCode"/\>
+    <item facet="type" translator="codelist:gmd:MD_ScopeCode"/\>
 
 -   SET ENGLISH AS DEFAULT LANGUAGE
 
@@ -149,7 +142,7 @@ language.forceDefault=true
 
 -   VISIBLE MAP IN THE FULL VIEW
 
-DELETE port 8080 in *setting -\> catalog server* to have a visible map in the
+DELETE port 8080 in *setting -> catalog server* to have a visible map in the
 full view
 
 -   DISABLE INSPIRE STRICT RULES
