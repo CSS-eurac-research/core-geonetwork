@@ -29,7 +29,7 @@ To create the .war file, it is necessary to
 
     1.  /opt/core-geonetwork/web/target/geonetwork.war
 
-5. ***DEPRECATED***
+***DEPRECATED***
 
 It is possible to access a test version of Geonetwork  where to check if your edits have been correctly implemented
 
