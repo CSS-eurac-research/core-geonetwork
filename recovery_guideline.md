@@ -37,9 +37,9 @@ It is possible to access a test version of Geonetwork  where to check if your ed
 It is possible to test this .war file running the following command from the
     folder /opt/core-geonetwork/:
 
-    1.  `cd web; mvn -Djetty.port=9090 jetty:run`
+   1. `cd web; mvn -Djetty.port=9090 jetty:run`
 
-    2.  open your browser and insert the following line in the panel:  
+   2. open your browser and insert the following line in the panel:  
         <http://10.8.244.29:9090/geonetwork/srv/eng/catalog.search#/search?any=>
  
 In this way you can access a test version of Geonetwork to check if your edits have been correctly implemented.
