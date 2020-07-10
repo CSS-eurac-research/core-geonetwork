@@ -118,11 +118,11 @@ language.forceDefault=true
 
 - VISIBLE MAP IN THE FULL VIEW
 
-DELETE port 8080 in _setting -\&gt; catalog server_ to have a visible map in the full view
+DELETE port 8080 in _setting -> catalog server_ to have a visible map in the full view
 
 - DISABLE INSPIRE STRICT RULES
 
-INSPIRE strict rules can be turned off from _admin \&gt; metadata and template \&gt; validation_ and ignore this level of validation.
+INSPIRE strict rules can be turned off from _admin -> metadata and template -> validation_ and ignore this level of validation.
 
 Database configuration
 
@@ -144,4 +144,4 @@ To set an appropriate Tomcat configuration values, please use this file:
 
 For example, to customize the data directory it is important to add the following line:
 
-CATALINA\_OPTS=&quot;-Dgeonetwork.dir=/mnt/CEPHFS\_CSS\_EDP\_RW/data&quot;
+CATALINA\_OPTS="-Dgeonetwork.dir=/mnt/CEPHFS_CSS_EDP_RW/data"
