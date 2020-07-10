@@ -29,6 +29,8 @@ To create the .war file, it is necessary to
 
     1.  /opt/core-geonetwork/web/target/geonetwork.war
 
+5. ***DEPRECATED***
+
 It is possible to access a test version of Geonetwork  where to check if your edits have been correctly implemented
 
 <http://10.8.244.229:8080/geonetwork/srv/eng/catalog.search#/search?any=>
@@ -42,10 +44,12 @@ It is possible to test this .war file running the following command from the
    2. open your browser and insert the following line in the panel:  
         <http://10.8.244.29:9090/geonetwork/srv/eng/catalog.search#/search?any=>
  
+***END DEPRECATED***
+
 In this way you can access a test version of Geonetwork to check if your edits have been correctly implemented.
 
-1.  If the customization is correct the next step is to save this .war file in
-    the tomcat web app folder.
+If the customization is correct the next step is to save this .war file in the tomcat web app folder:
+    `/var/lib/tomcat/webapps/`
 
 Run Geonetwork in Tomcat
 
