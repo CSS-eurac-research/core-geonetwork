@@ -181,3 +181,14 @@ For example, to customize the data directory it is important to add the
 following line:
 
 CATALINA_OPTS="-Dgeonetwork.dir=/mnt/CEPHFS_CSS_EDP_RW/data"
+
+-   ENABLE mrc:CLOUDCOVERPERCENTAGE translation
+
+To enable the correct translation for the cloud cover percentage tag, it is necessary to edit the following file:
+
+  /opt/core-geonetwork/schemas/iso19115-3.2018/src/main/plugin/iso19115-3.2018/loc/eng/labels.xml
+  
+at line 2156 where _mri_ should be changed in _mrc_
+
+    <element name="mrc:cloudCoverPercentage".../>"
+
